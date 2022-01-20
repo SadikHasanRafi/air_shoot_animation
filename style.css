@@ -1,0 +1,75 @@
+.field {
+    border: 2px solid rebeccapurple;
+    height: 700px;
+    width: 1500;
+}
+
+.field:hover .plane {
+    transform: scaleX(-1) translateX(750px) translateY(2px) ;
+    transition: all 3s linear 0.5s;
+    transform-origin: top;
+   
+}
+@keyframes explosion {
+    from{
+        visibility: visible;
+    }
+    to {
+        /* opacity: 0; */
+        visibility: hidden;
+      }
+}
+
+@keyframes firing {
+    0% {
+        rotate: 80deg;
+
+        top: 615px;
+
+        left: 20px;
+    }
+
+    100% {
+        rotate: 0deg;
+        left: 670px;
+        top: 10px;
+        z-index: 3;
+    }
+
+}
+
+.missile {
+    
+
+    position: absolute;
+    rotate: 80deg;
+    height: 50px;
+    top: 615px;
+    width: 50px;
+    left: 20px;
+    z-index: 1;
+    animation: firing 2.5s ease-in 1s 1 normal none;
+}
+
+.launcher {
+    -webkit-transform: scaleX(-1);
+    height: 90px;
+    width: 90px;
+    position: relative;
+    top: 600px;
+    z-index: 2;
+}
+
+.plane {
+    /* border: 2px dotted black; */
+    visibility: hidden;
+    height: 80px;
+    width: 80px;
+    position: absolute;
+    left: 1420px;
+    z-index: 1;
+    animation: explosion 3.6s ease-in-out 0.1s 1 normal none;
+    
+    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+}
+
